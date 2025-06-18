@@ -1,19 +1,6 @@
 ---
 cluster: "cheaha"
 form:
-  - conda_env_path
-  - python_module
   - bc_num_hours
   - bc_num_slots
   - bc_memory
-
-attributes:
-  conda_env_path:
-    widget: text_field
-    label: "Path to Conda Environment"
-    help: "Full path to the conda environment where Spyder is installed (e.g., /data/YOUR_USERNAME/miniconda3/envs/spyder-env)"
-
-  python_module:
-    widget: text_field
-    label: "Anaconda Module"
-    help: "Anaconda module to load before activating the environment (e.g., anaconda/2023.03)"
