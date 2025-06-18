@@ -1,0 +1,4 @@
+name: spyder_ide
+category: Interactive Apps
+description: Launch Spyder (Python IDE) in a browser-accessible remote desktop.
+icon: fa://laptop-code

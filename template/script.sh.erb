@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Load the specified Anaconda module
+<% unless python_module.blank? %>
+module load <%= python_module %>
+<% end %>
+
+# Activate the conda environment
+source activate <%= conda_env_path %>
+
+# Launch Spyder (it will run inside the VNC session)
+spyder
