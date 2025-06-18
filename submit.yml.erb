@@ -6,6 +6,6 @@ batch_connect:
 script:
   native:
     - "--ntasks=1"
-    - "--cpus-per-task=<%= bc_num_slots.blank? ? 8 : bc_num_slots %>"
-    - "--mem=<%= bc_memory.blank? ? 16 : bc_memory %>G"
-    - "--time=<%= bc_num_hours.blank? ? 4 : bc_num_hours %>:00:00"
+    - "--cpus-per-task=2"
+    - "--mem=4G"
+    - "--time=01:00:00"
