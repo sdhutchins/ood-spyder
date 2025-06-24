@@ -1,6 +1,69 @@
+<%-
+  partitions = OodAppkit.clusters[:SLURM_CLUSTER].custom_config[:partitions]
+-%>
 ---
-cluster: "cheaha"
+cluster: "SLURM_CLUSTER"
+
+title: "Spyder"
+
+description: |
+  Launch the Spyder IDE inside a VNC session using your selected environment.
+
+attributes:
+  custom_environment:
+    widget: text_area
+    label: Extra Environment Setup (Optional)
+    value: |
+      # Load additional modules or environment variables
+      # Avoid loading Anaconda3; it's already included
+
+  bc_num_hours:
+    value: 1
+
+  bc_num_slots:
+    widget: number_field
+    label: Number of CPUs
+    value: 1
+    min: 1
+    max: 24
+    step: 1
+
+  bc_num_mems:
+    widget: number_field
+    label: Memory per CPU (GB)
+    value: 4
+    min: 1
+    max: 128
+    step: 1
+
+  bc_num_gpus:
+    widget: number_field
+    label: Number of GPUs
+    value: 0
+    min: 0
+    max: 4
+    step: 1
+
+  bc_partition:
+    widget: select
+    label: Partition
+    options:
+    <%- partitions.each do |p| -%>
+      - [ "<%= p %>", "<%= p %>" ]
+    <%- end -%>
+
+  an_extra_args:
+    widget: text_field
+    label: Extra Spyder CLI Args
+    help: |
+      Optional arguments to pass to Spyder (e.g., a file to open)
+
 form:
+  - custom_environment
+  - an_extra_args
   - bc_num_hours
+  - bc_partition
+  - bc_num_gpus
   - bc_num_slots
-  - bc_memory
+  - bc_num_mems
+  - bc_email_on_started

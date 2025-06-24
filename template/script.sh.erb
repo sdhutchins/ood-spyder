@@ -1,15 +1,39 @@
 #!/usr/bin/env bash
 
-# Set working directory to home directory
+# TIMING - Start script
+echo "TIMING - Starting script at: $(date)"
+
+# Move to user's home directory
 cd "${HOME}"
 
-# Load the module
+# Optional: Configure minimal desktop (optional but improves UI if used)
+(
+  export SEND_256_COLORS_TO_REMOTE=1
+  export XDG_CONFIG_HOME="<%= session.staged_root.join("config") %>"
+  export XDG_DATA_HOME="<%= session.staged_root.join("share") %>"
+  export XDG_CACHE_HOME="$(mktemp -d)"
+  module reset
+  set -x
+  xfwm4 --compositor=off --daemon --sm-client-disable
+  xsetroot -solid "#D3D3D3"
+  xfsettingsd --sm-client-disable
+  xfce4-panel --sm-client-disable
+) &
+
+# TIMING - Load modules
+echo "TIMING - Loading modules at: $(date)"
+module purge
 module load Anaconda3/2023.07-2
 
-set -x
-
-# Activate the conda environment
+# TIMING - Activate environment
+echo "TIMING - Activating conda env at: $(date)"
+eval "$(${EBROOTANACONDA3}/bin/conda shell.bash hook)"
 conda activate /home/shutchin/.conda/envs/spyder-env
 
-# Start Spyder inside the VNC session
-spyder
+# Optional: List loaded modules
+module list
+
+# TIMING - Launch Spyder
+echo "TIMING - Launching Spyder at: $(date)"
+set -x
+spyder <%= context.an_extra_args %>
