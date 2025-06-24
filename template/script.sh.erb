@@ -1,7 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Set working directory to home directory
+cd "${HOME}"
 
 # Load the module
 module load Anaconda3/2023.07-2
+
+set -x
 
 # Activate the conda environment
 conda activate /home/shutchin/.conda/envs/spyder-env
