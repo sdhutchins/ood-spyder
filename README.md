@@ -11,6 +11,13 @@ This app enables users to run [Spyder](https://www.spyder-ide.org/) in a VNC-pow
 compute node. It provides an interactive development environment with access to the full computational resources
 of the selected partition.
 
+I was motivated to create this as an alternative to using remote tunneling via code-server.
+
+The following examples were very useful:
+
+- [UAB RC's Examples](https://gitlab.rc.uab.edu/rc-data-science/community-ood-sandbox)
+- [SupercomputingWales Example Spyder App](https://github.com/SupercomputingWales/scw_ood_spyder)
+
 ## Key Features
 
 - Launch Spyder with a graphical UI via Open OnDemand
