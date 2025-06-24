@@ -1,4 +1,9 @@
+---
 name: spyder_ide
 category: Interactive Apps
-description: Launch Spyder IDE in a remote desktop session
+role: batch_connect
+description: |
+  This app will launch Spyder Python3 IDE on a cluster node. You
+  will have full access to the resources these nodes provide. This is analogous
+  to an interactive batch job.
 icon: icon.png
