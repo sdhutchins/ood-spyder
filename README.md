@@ -1,4 +1,4 @@
-# Spyder OnDemand Application
+# Spyder Open OnDemand Application
 
 ![Experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
 
@@ -19,6 +19,16 @@ of the selected partition.
 - Supports multiple partition profiles with varying limits
 
 ## Usage
+
+1. Users must set up the OOD Sandbox using instructions from the [Cheaha Open OnDemand documentation](https://docs.rc.uab.edu/workflow_solutions/creating_sandbox_apps/#setting-up-ood-sandbox-for-your-cheaha-account).
+
+    ⚠️ If you are not using the Cheaha cluster, you may need to follow different steps.
+
+2. Users must clone an existing OOD app using [these instructions](https://docs.rc.uab.edu/workflow_solutions/creating_sandbox_apps/#fsl).
+
+3. Instead of using the FSL app, users should clone this repository: `git@github.com:sdhutchins/ood-spyder.git`
+
+### Launching Spyder
 
 To launch a session:
 
