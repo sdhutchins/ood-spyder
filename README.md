@@ -40,7 +40,7 @@ The following examples were very useful:
 To launch a session:
 
 1. Select the desired partition.
-2. Set the number of CPUs, memory per core, and optional GPU usage (where available).
+2. Set the number of CPUs, memory per core (recommended to use at least 8 GB total), and optional GPU usage (where available).
 3. Click **Launch** to start the session.
 4. Once the session starts, connect via the "Launch Spyder" button.
 
