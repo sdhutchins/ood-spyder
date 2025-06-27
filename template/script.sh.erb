@@ -29,10 +29,15 @@ module load Anaconda3/2023.07-2
 # TIMING - Activate environment
 echo "TIMING - Activating conda env at: $(date)"
 eval "$($(which conda) shell.bash hook)"
-conda activate /home/shutchin/.conda/envs/spyder-env
 
-# Optional: List loaded modules
-module list
+ENV_PATH="$HOME/.conda/envs/spyder-env"
+
+if [ -d "$ENV_PATH" ]; then
+  conda activate "$ENV_PATH"
+else
+  echo "Conda environment not found at $ENV_PATH"
+  exit 1
+fi
 
 # TIMING - Launch Spyder
 echo "TIMING - Launching Spyder at: $(date)"
