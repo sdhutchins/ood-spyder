@@ -5,6 +5,8 @@
 This repository contains a [Open OnDemand](https://openondemand.org/) Batch Connect application for launching
 the Spyder Python IDE on an HPC cluster.
 
+⚠️ This has now been adapted by [UAB Research Computing](https://rc.uab.edu/) for use on the [Cheaha cluster](https://docs.rc.uab.edu/cheaha/). The app is located at: <https://gitlab.rc.uab.edu/rc-data-science/community-ood-sandbox/spyderide>.
+
 ## Overview
 
 This app enables users to run [Spyder](https://www.spyder-ide.org/) in a VNC-powered graphical session directly on a
@@ -43,29 +45,6 @@ To launch a session:
 2. Set the number of CPUs, memory per core (recommended to use at least 8 GB total), and optional GPU usage (where available).
 3. Click **Launch** to start the session.
 4. Once the session starts, connect via the "Launch Spyder" button.
-
-## Partition Resource Limits
-
-The table below summarizes the maximum allowed resources per partition:
-
-| Partition            | Max CPUs | Max Hours | Max GPUs |
-|----------------------|----------|-----------|----------|
-| interactive          | 48       | 2         | 0        |
-| express              | 48       | 2         | 0        |
-| short                | 48       | 12        | 0        |
-| pascalnodes          | 28       | 12        | 4        |
-| pascalnodes-medium   | 28       | 48        | 4        |
-| medium               | 48       | 50        | 0        |
-| long                 | 48       | 150       | 0        |
-| intel-dcb            | 24       | 150       | 0        |
-| amd-hdr100           | 128      | 150       | 0        |
-| largemem             | 24       | 50        | 0        |
-| largemem-long        | 24       | 150       | 0        |
-| amperenodes          | 128      | 12        | 2        |
-| amperenodes-medium   | 128      | 48        | 2        |
-
-⚠️ GPU selection is only available in the following partitions:  
-`pascalnodes`, `pascalnodes-medium`, `amperenodes`, and `amperenodes-medium`.
 
 ## Files Included
 
