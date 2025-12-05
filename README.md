@@ -1,6 +1,6 @@
 # Spyder Open OnDemand Application
 
-![Experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+![Experimental](https://img.shields.io/badge/stability-experimental-blue.svg)
 
 This repository contains a [Open OnDemand](https://openondemand.org/) Batch Connect application for launching
 the Spyder Python IDE on an HPC cluster.
